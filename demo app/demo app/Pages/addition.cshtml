@@ -1,0 +1,12 @@
+﻿@page
+@model demo_app.Pages.additionModel
+@{
+}
+<form method="post">
+    Number1 <input asp-for="Number1" class="form-control" />
+    Number2 <input asp-for="Number2" class="form-control" />
+
+    <input type="submit" value="Add" class="btn btn-primary" />
+
+</form>
+Sum = @Model.Result

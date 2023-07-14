@@ -1,0 +1,41 @@
+﻿@page
+@model formValidation.Pages.Form.FormValidationModel
+@{
+}
+
+<script>
+
+    $(document).ready(function(){
+        $("form[name='formValidation']").validate({
+            rules:{
+                user:"required",
+                pass:{
+                    required:true,
+                    minlength:3
+                }
+            },
+            messages:{
+                user:"Enter name",
+                pass:{
+                    required:"password must be entered",
+                    minlength:"more than 4"
+                }
+            },
+            submitHandler: function(form){
+                form.submit();
+            }
+        });
+
+    });
+
+
+</script>
+
+
+<form id="myform" method="post" name="formValidation">
+
+
+    Enter name:<input name="user"  class="form-control" type="text"/>
+    Enter password:<input name="pass" class="form-control" type="text" />
+    <input type="submit" name="save" value="save"/>
+</form>
